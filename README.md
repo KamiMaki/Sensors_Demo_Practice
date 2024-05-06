@@ -263,7 +263,7 @@ restart.visibility = View.INVISIBLE//button切換為隱藏
 ```
 
 > [!NOTE]  
-> **開發過程中發現問題:** CountDownTimer為一個Thread，可以想像成在背景獨立運作，有時候在遊玩時會不小心跳出activity，但此時CountDownTimer仍持續運作中，導致再次進入遊戲時會有兩個CountDownTimer同時運作 \\
-> **解決目標:** 離開activity時要中斷CountDownTimer的運作 \\
-> **解決方法:** 新增一個flag，在activity onPause()時設為false，CountDownTimer中如果flag為false則cancel()//結束CountDownTimer
+> **開發過程中發現問題:** CountDownTimer為一個Thread，可以想像成在背景獨立運作，有時候在遊玩時會不小心跳出activity，但此時CountDownTimer仍持續運作中，導致再次進入遊戲時會有兩個CountDownTimer同時運作
+**解決目標:** 離開activity時要中斷CountDownTimer的運作
+**解決方法:** 新增一個flag，在activity onPause()時設為false，CountDownTimer中如果flag為false則cancel() //結束CountDownTimer
 
