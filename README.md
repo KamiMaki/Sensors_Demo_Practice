@@ -1,3 +1,5 @@
+此專案為練習檔，完整版專案連結：https://github.com/KamiMaki/Sensors_Demo_Complete
+
 :bulb: **本節課程你會學到:**
 * sensor的基本介紹與控制語法
 * 列出本裝置支援的sensor清單
