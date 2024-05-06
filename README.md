@@ -14,9 +14,9 @@
 
 ---
 ## 練習程式碼下載:
-:::info
-本次課程提供完整專案檔供學員練習，且layout部分皆已實作完畢，學員只需專心理解並實作kotlin程式部分即可，練習檔中會以`TODO:`說明需要實作的內容
-:::
+> [!NOTE]
+> 本次課程提供完整專案檔供學員練習，且layout部分皆已實作完畢，學員只需專心理解並實作kotlin程式部分即可，練習檔中會以`TODO:`說明需要實作的內容
+
 
 :point_right: [練習檔](https://github.com/KamiMaki/Sensors_Demo_Practice)
 :100: [完整解答](https://github.com/KamiMaki/Sensors_Demo_Complete)
