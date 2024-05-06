@@ -148,7 +148,9 @@ for(sensor in allSensors){
 * 有正負號
 
 **完成畫面:**
+
 ![](https://i.imgur.com/LzqcxPv.png)
+
 **實作步驟:**
 1. 在**onCreate外**宣告全域的`SensorManager`及`Sensor`型態變數，因為onPause時需要取消註冊
 ```kotlin
@@ -165,6 +167,7 @@ private lateinit var mAccelerometer: Sensor
 ## Practice 2:多重sensor - 在同個activity中接光、溫度、濕度的sensor
 **sensor type參考表**
 ![](https://i.imgur.com/1sRbNUX.png)
+
 **完成畫面:**
 ![](https://i.imgur.com/guIipjm.png)
 
@@ -192,7 +195,7 @@ if(event.sensor.type == Sensor.TYPE_LIGHT) {
 > 觸發條件設定是為了確保使用者真的有搖動裝置，避免輕微幅度的晃動造成功能觸發，而觸發條件的設定也很多種，大家可以自己試試其他方法
 
 **在Manifest文件中加入震動權限**
-```xml=
+```xml
 <uses-permission android:name="android.permission.VIBRATE" />`
 ```
 **設計流程**
@@ -259,9 +262,8 @@ start.visibility = View.VISIBLE//button切換為顯示
 restart.visibility = View.INVISIBLE//button切換為隱藏
 ```
 
-:::success
-**開發過程中發現問題:** CountDownTimer為一個Thread，可以想像成在背景獨立運作，有時候在遊玩時會不小心跳出activity，但此時CountDownTimer仍持續運作中，導致再次進入遊戲時會有兩個CountDownTimer同時運作
-**解決目標:** 離開activity時要中斷CountDownTimer的運作
+> [!NOTE]  
+> **開發過程中發現問題:** CountDownTimer為一個Thread，可以想像成在背景獨立運作，有時候在遊玩時會不小心跳出activity，但此時CountDownTimer仍持續運作中，導致再次進入遊戲時會有兩個CountDownTimer同時運作
+> **解決目標:** 離開activity時要中斷CountDownTimer的運作
+> **解決方法:** 新增一個flag，在activity onPause()時設為false，CountDownTimer中如果flag為false則cancel()//結束CountDownTimer
 
-**解決方法:** 新增一個flag，在activity onPause()時設為false，CountDownTimer中如果flag為false則cancel()//結束CountDownTimer
-:::
